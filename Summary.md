@@ -100,5 +100,3 @@ text
    - Include actionable commands
    - Highlight important components
    - Are optimized for GitHub Markdown
-
-Would you like me to add any specific deployment instructions or additional technical details about any component?
