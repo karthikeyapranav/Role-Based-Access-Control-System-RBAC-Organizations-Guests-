@@ -17,9 +17,8 @@ A production-ready Role-Based Access Control system with organizations, departme
 - **API Documentation**: Interactive Swagger UI with auth support
 
 ## 📦 Installation
-
-1. Clone the repository:
-```bash = git clone https://github.com/karthikeyapranav/Role-Based-Access-Control-System-RBAC-Organizations-Guests-.git
+Clone the repository:
+bash = git clone https://github.com/karthikeyapranav/Role-Based-Access-Control-System-RBAC-Organizations-Guests-.gith
 Set up environment variables:
 
 bash
@@ -28,7 +27,6 @@ Start the system:
 
 bash
 docker-compose up -d --build
-
 🔑 Initial Setup
 Create admin role:
 
@@ -74,3 +72,5 @@ To reset the database:
 bash
 docker-compose down -v
 docker-compose up -d
+
+
