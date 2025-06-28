@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_rbac
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: rbac_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./backend
+    container_name: fastapi_rbac
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./backend/app:/code/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://user:password@db:5432/rbac_db
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${ACCESS_TOKEN_EXPIRE_MINUTES:-30}  # Fallback to 30
+      SECRET_KEY: ${SECRET_KEY:-default-secret-key}
+      ALGORITHM: ${ALGORITHM:-HS256}
+      
+volumes:
+  postgres_data:
