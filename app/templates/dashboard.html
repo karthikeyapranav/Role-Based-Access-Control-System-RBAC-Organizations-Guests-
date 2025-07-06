@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Dashboard</h2>
+
+{% if message %}
+  <p style="color:green;"><b>{{ message }}</b></p>
+{% endif %}
+
+<hr>
+<h3>Create Organization</h3>
+<form method="POST">
+  <input type="hidden" name="action" value="create_org">
+  <input type="text" name="org_name" placeholder="Org Name" required>
+  <input type="submit" value="Create Org">
+</form>
+
+<hr>
+<h3>Create Department</h3>
+<form method="POST">
+  <input type="hidden" name="action" value="create_dept">
+  <input type="text" name="dept_name" placeholder="Dept Name" required>
+  <select name="dept_org_id" required>
+    {% for org in orgs %}
+      <option value="{{ org.id }}">{{ org.name }} (ID {{ org.id }})</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Create Dept">
+</form>
+
+<hr>
+<h3>Assign Role to You (User ID 1)</h3>
+<form method="POST">
+  <input type="hidden" name="action" value="assign_role">
+  <select name="role_name" required>
+    {% for r in roles %}
+      <option value="{{ r }}">{{ r }}</option>
+    {% endfor %}
+  </select>
+  <select name="role_org_id" required>
+    {% for org in orgs %}
+      <option value="{{ org.id }}">{{ org.name }}</option>
+    {% endfor %}
+  </select>
+  <select name="role_dept_id">
+    <option value="">(Optional) Select Department</option>
+    {% for dept in depts %}
+      <option value="{{ dept.id }}">{{ dept.name }}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Assign Role">
+</form>
+
+<hr>
+<h3>Upload Resource</h3>
+<form method="POST">
+  <input type="hidden" name="action" value="upload_resource">
+  <input type="text" name="res_name" placeholder="Name" required><br>
+  <textarea name="res_content" placeholder="Content" required></textarea><br>
+  <select name="res_org_id" required>
+    {% for org in orgs %}
+      <option value="{{ org.id }}">{{ org.name }}</option>
+    {% endfor %}
+  </select>
+  <select name="res_dept_id" required>
+    {% for dept in depts %}
+      <option value="{{ dept.id }}">{{ dept.name }}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Upload">
+</form>
+
+<hr>
+<h3>Generate Guest Link</h3>
+<form method="POST">
+  <input type="hidden" name="action" value="generate_guest">
+  <select name="guest_res_id" required>
+    {% for res in resources %}
+      <option value="{{ res.id }}">{{ res.name }} (ID {{ res.id }})</option>
+    {% endfor %}
+  </select>
+  <select name="guest_permission">
+    <option value="view">View</option>
+    <option value="edit">Edit</option>
+  </select>
+  <input type="submit" value="Generate Link">
+</form>
+
+<hr>
+<h3>Existing Orgs</h3>
+<ul>
+  {% for org in orgs %}
+    <li>ID {{ org.id }}: {{ org.name }}</li>
+  {% endfor %}
+</ul>
+
+<h3>Existing Depts</h3>
+<ul>
+  {% for dept in depts %}
+    <li>ID {{ dept.id }}: {{ dept.name }} (Org ID {{ dept.organization_id }})</li>
+  {% endfor %}
+</ul>
+
+<h3>Existing Resources</h3>
+<ul>
+  {% for res in resources %}
+    <li>ID {{ res.id }}: {{ res.name }} - {{ res.content }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

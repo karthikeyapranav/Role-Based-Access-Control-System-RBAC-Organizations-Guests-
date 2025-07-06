@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<form method="POST" action="/upload_resource_form">
+  <input type="text" name="name" placeholder="Resource Name" required><br>
+  <textarea name="content" placeholder="Resource Content"></textarea><br>
+  <input type="number" name="organization_id" placeholder="Org ID" required><br>
+  <input type="number" name="department_id" placeholder="Dept ID" required><br>
+  <input type="submit" value="Upload">
+</form>
+{% endblock %}
