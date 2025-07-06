@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>{{ resource.name }}</h2>
+<p>{{ resource.content }}</p>
+
+{% if editable %}
+<form method="POST">
+  <textarea name="content">{{ resource.content }}</textarea><br>
+  <input type="submit" value="Update">
+</form>
+{% endif %}
+{% endblock %}
