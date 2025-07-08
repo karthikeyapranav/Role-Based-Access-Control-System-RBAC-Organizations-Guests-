@@ -1,9 +1,9 @@
 
 ---
 
-## 📑 `summary.md` (for a pitch deck, report, or college submission)
+##  `summary.md` (for a pitch deck, report, or college submission)
 
-```markdown
+
 # Summary: Role-Based Access Control System with Guest Sharing
 
 ## Objective
@@ -14,24 +14,24 @@ Design and implement a secure, multi-layered Role-Based Access Control (RBAC) sy
 
 ## Key Features
 
-- 🔐 **Authentication**
+-  **Authentication**
   - User signup and login
   - Token/session-based access
 
-- 🏢 **Entities**
+-  **Entities**
   - Organizations
   - Departments under organizations
   - Users with roles (Admin, Manager, Contributor, Viewer)
 
-- 📂 **Resource Management**
+-  **Resource Management**
   - Upload and store resources
   - Resources are scoped to organizations/departments
 
-- 🔗 **Guest Link Sharing**
+-  **Guest Link Sharing**
   - Generate public links with view/edit permissions
   - No login required to access
 
-- 🧠 **Permissions**
+-  **Permissions**
   - Role-based access at both organization and department level
   - Only allowed users can perform actions based on their assigned role
 
