@@ -1,4 +1,4 @@
-# 🛡️ Flask Role-Based Access Control (RBAC) System
+#  Flask Role-Based Access Control (RBAC) System
 
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![Flask Version](https://img.shields.io/badge/Flask-2.x-lightgrey.svg)](https://flask.palletsprojects.com/)
@@ -9,22 +9,22 @@ This project presents a **simple yet robust, production-style Role-Based Access 
 
 ---
 
-## ✨ Core Features & Capabilities
+##  Core Features & Capabilities
 
 This system provides a comprehensive set of features for managing users, organizations, departments, and resources with fine-grained permissions:
 
 | Feature                     | Description                                                                                                                                                                                               |
 | :-------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🔐 **JWT-based Authentication** | Secure user registration and login are managed using JSON Web Tokens (JWTs) for stateless and scalable authentication. Both session-based and JWT approaches can be implemented.                                  |
-| 🏢 **Organizations & Departments** | Create and manage hierarchical structures with support for organizations and nested departments. This allows for clear segregation of data and user access based on organizational units.                     |
-| 👥 **Granular User Roles** | Defines a clear set of roles: `Admin`, `Manager`, `Contributor`, and `Viewer`. Each role comes with predefined permissions that dictate what a user can see, modify, or share within their assigned scope. |
-| 📂 **Resource Management** | Facilitates the secure upload, storage, and management of various digital resources (e.g., files, documents). Access to these resources is strictly controlled by the user's role and departmental affiliation. |
-| 🔗 **Guest Link Sharing** | Enables the generation of secure, time-limited guest links for specific resources. These links provide either 'View' or 'Edit' access, similar to popular cloud document sharing services like Google Docs, without requiring guest authentication. |
-| 🖥️ **Interactive Dashboard** | All core functionalities, including user management, organization/department creation, resource upload, and role assignment, are accessible through a user-friendly HTML dashboard powered by Flask forms. No need for external API tools like Postman for basic operations. |
+|  **JWT-based Authentication** | Secure user registration and login are managed using JSON Web Tokens (JWTs) for stateless and scalable authentication. Both session-based and JWT approaches can be implemented.                                  |
+|  **Organizations & Departments** | Create and manage hierarchical structures with support for organizations and nested departments. This allows for clear segregation of data and user access based on organizational units.                     |
+|  **Granular User Roles** | Defines a clear set of roles: `Admin`, `Manager`, `Contributor`, and `Viewer`. Each role comes with predefined permissions that dictate what a user can see, modify, or share within their assigned scope. |
+|  **Resource Management** | Facilitates the secure upload, storage, and management of various digital resources (e.g., files, documents). Access to these resources is strictly controlled by the user's role and departmental affiliation. |
+|  **Guest Link Sharing** | Enables the generation of secure, time-limited guest links for specific resources. These links provide either 'View' or 'Edit' access, similar to popular cloud document sharing services like Google Docs, without requiring guest authentication. |
+|  **Interactive Dashboard** | All core functionalities, including user management, organization/department creation, resource upload, and role assignment, are accessible through a user-friendly HTML dashboard powered by Flask forms. No need for external API tools like Postman for basic operations. |
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 Follow these steps to get your Flask RBAC system up and running on your local machine.
 
@@ -79,7 +79,7 @@ Follow these steps to get your Flask RBAC system up and running on your local ma
 
 ---
 
-## 💻 Tech Stack
+##  Tech Stack
 
 The project leverages a modern and efficient set of technologies:
 
@@ -91,7 +91,7 @@ The project leverages a modern and efficient set of technologies:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 The codebase is organized logically to separate concerns and enhance maintainability:
 
@@ -114,22 +114,22 @@ rbac_system/
 
 ---
 
-## 🔒 Role Permissions Explained
+##  Role Permissions Explained
 
 The system implements a clear hierarchy of roles, each with specific capabilities:
 
 | Role        | Can Upload Resources | Can Share Resources (Guest Links) | Can View Others' Resources (within scope) | Description                                                                                |
 | :---------- | :------------------- | :-------------------------------- | :---------------------------------------- | :----------------------------------------------------------------------------------------- |
-| **Admin** | ✅ Yes               | ✅ Yes                            | ✅ Yes                                    | Full control. Can manage all users, organizations, departments, and resources.             |
-| **Manager** | ✅ Yes               | ✅ Yes                            | ✅ Yes                                    | Can manage users and resources within their assigned organization or department, including sharing. |
-| **Contributor** | ✅ Yes           | ❌ No                             | ✅ Yes                                    | Can upload and manage their own resources and view others' resources within their scope, but cannot share. |
-| **Viewer** | ❌ No                | ❌ No                             | ✅ Yes                                    | Can only view resources within their assigned organization or department. Cannot upload or share. |
+| **Admin** |  Yes               |  Yes                            |  Yes                                    | Full control. Can manage all users, organizations, departments, and resources.             |
+| **Manager** |  Yes               |  Yes                            |  Yes                                    | Can manage users and resources within their assigned organization or department, including sharing. |
+| **Contributor** |  Yes           |  No                             |  Yes                                    | Can upload and manage their own resources and view others' resources within their scope, but cannot share. |
+| **Viewer** |  No                |  No                             |  Yes                                    | Can only view resources within their assigned organization or department. Cannot upload or share. |
 
 These permissions ensure that access is granted on a "least privilege" basis, enhancing security.
 
 ---
 
-## 🔗 Guest Link Functionality
+##  Guest Link Functionality
 
 The guest link feature provides a powerful way to share resources without requiring external users to register or log in.
 
@@ -146,7 +146,7 @@ The guest link feature provides a powerful way to share resources without requir
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourname/rbac_system/issues).
 
@@ -158,13 +158,13 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 * The Flask community for an excellent web framework.
 * The creators of Flask-JWT-Extended and SQLAlchemy for their invaluable libraries.
